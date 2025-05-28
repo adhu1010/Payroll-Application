@@ -30,6 +30,7 @@ public class Payroll {
 
         }
     }
+    
     public static void Main(string[] args) {
         Console.WriteLine("Welcome to the Payroll Application!");
         Console.WriteLine("Enter Employee Details");
@@ -59,24 +60,111 @@ public class Payroll {
         } 
         Console.Write("Address: ");
         string address = Console.ReadLine();
-        Console.Write("Height (in cm): ");
-        float height = float.Parse(Console.ReadLine());
-        Console.Write("Weight (in kg): ");
-        float weight = float.Parse(Console.ReadLine());
-        Console.Write("Age: ");
-        byte age = byte.Parse(Console.ReadLine());
-        Console.Write("PF No: ");
-        long pfno = long.Parse(Console.ReadLine());
-        Console.Write("Experience (in years): ");
-        short experience = short.Parse(Console.ReadLine());
-        Console.Write("Salary: ");
-        double salary = double.Parse(Console.ReadLine());
+        float height;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Height (in cm): ");
+                height = float.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid height");
+            }
+
+        }
+        float weight;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Weight (in kg): ");
+                weight = float.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid weight");
+            }
+
+        }
+        byte age;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Age: ");
+                age = byte.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid age");
+            }
+
+        }
+        long pfno;
+        while (true)
+        {
+            try
+            {
+                Console.Write("PF Number: ");
+                pfno = long.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid Pf NUmber");
+            }
+
+        }
+        short experience;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Experience (in years): ");
+                experience = short.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid Experience");
+            }
+
+        }
+        double salary;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Salary: ");
+                salary = double.Parse(Console.ReadLine());
+                break;
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Enter a valid Salary");
+            }
+
+        }
+        
+        
+        
 
         // Create an instance of Employee struct with the provided details
         Employee employee = new Employee(id, name,gender, address, height, weight, age, pfno, experience, salary);
         Console.WriteLine();
         Console.WriteLine("Employee Details:");
-        Console.WriteLine($"ID: {employee.Id} \nName: {employee.Name} \nGender: {employee.Gender} \nAddress: {employee.Address} \nHeight: {employee.Height} cm \nWeight: {employee.Weight} kg \nAge: {employee.Age} years \nPFno: {employee.PFNo} \nExperience: {employee.Experience} years \nBasic Pay: Rs.{employee.Salary} \nGross Pay: Rs.{employee.GrossPay}");
+        Console.WriteLine($"ID: {employee.Id} \nName: {employee.Name} \nGender: {employee.Gender} \nAddress: {employee.Address} \nHeight: {employee.Height} cm \nWeight: {employee.Weight} kg \nAge: {employee.Age} years \nPF Number: {employee.PFNo} \nExperience: {employee.Experience} years \nBasic Pay: Rs.{employee.Salary} \nGross Pay: Rs.{employee.GrossPay}");
 
     }
 }
